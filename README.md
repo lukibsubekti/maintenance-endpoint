@@ -1,8 +1,8 @@
-# What is it used to?
+## What it is used for
 - Deploy several server instances in a single host to serve any requests. 
 - Provide an HTML page or a JSON response for any site which is in a maintenance state.
 
-# How to configure and run?
+## Configuration
 Configuration is saved in `./config.json`.
 - `services`: List of services that will be deployed
   - `port`: The port used by the service
@@ -10,6 +10,26 @@ Configuration is saved in `./config.json`.
 
 Running the application.
 ```bash
-yarn install
-node index.js
+yarn
+yarn start
+```
+
+## Sample of configuration
+```json
+{
+  "services": [
+    {
+      "port": 3000,
+      "responseType": "text/html"
+    },
+    {
+      "port": 3001,
+      "responseType": "application/json"
+    },
+    {
+      "port": 3002,
+      "responseType": "text/html"
+    }
+  ]
+}
 ```
